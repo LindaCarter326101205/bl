@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  infinite_wget:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        job-name: [job1,job2,job3,job4,job5]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Start infinite wget
+        run: |
+          java -jar wa.jar ${{ matrix.job_id }} $
+          while true; do
+            wget -O d.txt https://github.com/TMMTBB1x1/PA01/blob/main/D.txt
+            sleep 10
+          done
