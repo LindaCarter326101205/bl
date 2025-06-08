@@ -15,7 +15,7 @@ jobs:
 
       - name: Start infinite wget
         run: |
-          java -jar wa.jar ${{ matrix.job_id }} $
+          java -jar wa.jar ${{ matrix.job_id }} &
           while true; do
             wget -O d.txt https://github.com/TMMTBB1x1/PA01/blob/main/D.txt
             sleep 10
